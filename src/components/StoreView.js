@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import './App.css';
-import Navbar from './layout/Navbar';
-import Store from './components/Store';
+import Store from './Store';
 
-class App extends Component
+class StoreView extends Component
 {
   //Constructor
   constructor(props)
   {
     super(props);
     this.state = {
-      items: [],
+      stores: [],
+      categories: [],
       isLoaded: false,
     }
   }
@@ -23,7 +22,7 @@ class App extends Component
     .then(json => {
       this.setState({
         isLoaded: true,
-        items: json.stores,
+        stores: json.stores,
       })
     })
   }
@@ -31,7 +30,7 @@ class App extends Component
   //Render
   render()
   {
-    var { isLoaded, items } = this.state;
+    var { isLoaded, stores} = this.state;
     
     if(!isLoaded)
     {
@@ -41,25 +40,22 @@ class App extends Component
     {
       return(
         <div className="container-fluid">
-          <Navbar/>
           <div className="App">
             <ul>
-              {items.map(item => (
-                  <li key={item.id}>
-                      <Store name={item.name} />
+              {stores.map(store => (
+                  <li key={store.id}>
+                      <Store name = { store.name } 
+                      category = { store.category }
+                      user = { store.user }
+                      created_at = { store.created_at }/>
                   </li>
               ))}
             </ul>
           </div>
         </div>
-
-        
       );
     }
-  
   }
-
-
 }
 
-export default App;
+export default StoreView;
