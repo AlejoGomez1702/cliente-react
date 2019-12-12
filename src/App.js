@@ -1,26 +1,64 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Navbar from './layout/Navbar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component
+{
+  //Constructor
+  constructor(props)
+  {
+    super(props);
+    this.state = {
+      items: [],
+      isLoaded: false,
+    }
+  }
+
+  //DidMount
+  componentDidMount()
+  {
+    fetch('https://api-carrito.herokuapp.com/api/stores/')
+    .then(res => res.json())
+    .then(json => {
+      this.setState({
+        isLoaded: true,
+        items: json,
+      })
+    })
+  }
+
+  //Render
+  render()
+  {
+    var { isLoaded, items } = this.state;
+    
+    if(!isLoaded)
+    {
+      return <div>Loading...</div>
+    }
+    else
+    {
+      return(
+        <div className="container-fluid">
+          <Navbar/>
+          <div className="App">
+            <ul>
+              {items.map(item => (
+                  <li key={item.id}>
+                      {item.id} | {item.name} | {item.user_id}
+                  </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        
+      );
+    }
+  
+  }
+
+
 }
 
 export default App;
