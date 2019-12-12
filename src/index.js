@@ -7,13 +7,13 @@ import Store from './components/Store';
 import StoreView from './components/StoreView';
 import * as serviceWorker from './serviceWorker';
 
-<<<<<<< HEAD
+
 ReactDOM.render(<App />, document.getElementById('root'));
 //  ReactDOM.render(<Login />, document.getElementById('root'));
-=======
-// ReactDOM.render(<App />, document.getElementById('root'));
- ReactDOM.render(<StoreView />, document.getElementById('root'));
->>>>>>> origin/master
+// =======
+// // ReactDOM.render(<App />, document.getElementById('root'));
+//  ReactDOM.render(<StoreView />, document.getElementById('root'));
+// >>>>>>> origin/master
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
