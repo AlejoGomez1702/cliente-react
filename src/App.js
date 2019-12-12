@@ -23,11 +23,13 @@ class App extends Component
       return(
         <BrowserRouter>
           <Switch>
-            <Route path='/' exact />
+            <Route 
+              path='/alejoo'
+              component={Login}/>
             <Route path='/index' exact />
             <Route path='/post/:id' />
             <Route
-              path="/hola"
+              path="/stores"
               component={StoreView} />
           </Switch>
         </BrowserRouter>

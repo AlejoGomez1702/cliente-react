@@ -52,6 +52,7 @@ class StoreView extends Component
               ))}
             </ul>
           </div>
+          <a href="/alejoo">otro enlace</a>
         </div>
       );
     }
