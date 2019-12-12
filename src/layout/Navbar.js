@@ -1,5 +1,8 @@
 import React from 'react';
 
+import {Link, Route, Router} from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
+
 const Navbar=()=>{
 
     return(
@@ -11,10 +14,11 @@ const Navbar=()=>{
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">IniciarSesión <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Registrarse</a>
-                <a class="nav-item nav-link disabled" href="#" aria-disabled="true">Tiendas</a>
-                <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-item nav-link active" href="/">IniciarSesión <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#">Registrarse</a>
+                    <a class="nav-item nav-link disabled" href="#" aria-disabled="true">Tiendas</a>
+                    <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                   
                 </div>
             </div>
         </nav>

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-class Registry extends Component
+class UpdateUser extends Component
 {
-  //Render
+
   render()
   {
     return(
@@ -23,11 +23,7 @@ class Registry extends Component
                   <label for="exampleInputPassword1">Contraseña</label>
                   <input type="password" className="form-control" id="exampleInputPassword1"/> 
               </div>
-              <div className="form-group ">
-              <label for="exampleInputPassword1">Confirmar Contraseña</label>
-                  <input type="password" className="form-control" id="exampleInputPassword1"/> 
-              </div>
-              <button type="submit" class="btn btn-primary">Ingresar</button>
+              <button type="submit" class="btn btn-primary">Actualizar</button>
           </form>
       </div>
 
@@ -35,4 +31,4 @@ class Registry extends Component
   }
 }
 
-export default Registry;
+export default UpdateUser;

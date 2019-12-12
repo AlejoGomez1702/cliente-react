@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import Navbar from './layout/Navbar';
+import Login from './components/Login';
+import Registry from './components/Registry';
+import UpdateUser from './components/UpdateUser';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import {Link, Route, Router} from 'react-router';
+// import { Link } from 'react-router'
+
 
 class App extends Component
 {
@@ -39,9 +46,23 @@ class App extends Component
     else
     {
       return(
-        <div className="container-fluid">
-          <Navbar/>
-          <div className="App">
+
+        <Router>
+          <Route
+              component={Registry}
+              path="/"
+          />
+           <Route
+              component={Navbar}
+              path="/nav/"
+          />
+      </Router>,
+
+        
+          // <Navbar/>
+       
+          <div className="container-fluid"> 
+            <div className="App">
             <ul>
               {items.map(item => (
                   <li key={item.id}>
@@ -49,10 +70,11 @@ class App extends Component
                   </li>
               ))}
             </ul>
+          
+            {/* <a href="/n">----</a> */}
           </div>
-        </div>
-
-        
+        </div> 
+  
       );
     }
   
