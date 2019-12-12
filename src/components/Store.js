@@ -21,7 +21,7 @@ class Store extends Component
                         <h5 className="card-title">{this.props.name}</h5>
                         <p className="card-text">Categoria: {this.props.category.name}</p>
                         <p className="card-text">Administrador: {this.props.user.name}</p>
-                        <p className="card-text">Fecha de Creación: {this.props.created_at}</p>
+                        <p className="card-text">Fecha de Lanzamiento: {this.props.created_at}</p>
                         <a href="#" class="btn btn-primary">INGRESAR</a>
                     </div>
                 </div>
