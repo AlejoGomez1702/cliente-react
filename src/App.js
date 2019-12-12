@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Navbar from './layout/Navbar';
+<<<<<<< HEAD
 import Login from './components/Login';
 import Registry from './components/Registry';
 import UpdateUser from './components/UpdateUser';
@@ -8,6 +9,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import {Link, Route, Router} from 'react-router';
 // import { Link } from 'react-router'
 
+=======
+import Store from './components/Store';
+>>>>>>> origin/master
 
 class App extends Component
 {
@@ -24,12 +28,12 @@ class App extends Component
   //DidMount
   componentDidMount()
   {
-    fetch('https://api-carrito.herokuapp.com/api/stores/')
+    fetch('http://localhost:8000/api/stores')
     .then(res => res.json())
     .then(json => {
       this.setState({
         isLoaded: true,
-        items: json,
+        items: json.stores,
       })
     })
   }
@@ -66,7 +70,7 @@ class App extends Component
             <ul>
               {items.map(item => (
                   <li key={item.id}>
-                      {item.id} | {item.name} | {item.user_id}
+                      <Store name={item.name} />
                   </li>
               ))}
             </ul>
